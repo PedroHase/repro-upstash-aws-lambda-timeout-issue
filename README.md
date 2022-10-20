@@ -6,7 +6,7 @@ Reproducing a timeout issue with upstash in AWS Lambda.
 
 ### What is it all about?
 
-This Repo contains a AWS CDK that defines a HttpGateway and a Lambda `src/rateLimiter/index.ts`. The lambda uses a rate limiter (`utils/rateLimiter.util.ts`) using `@upstash/ratelimit`. When making a request to the Lambda, the rate limiter should decide if the request should go through or not.
+This Repo contains a AWS CDK that defines a HttpGateway and a Lambda `src/rateLimiter/index.ts` using Node v16 (in this repo we use Node v14 as this is the only version running locally). The lambda uses a rate limiter (`utils/rateLimiter.util.ts`) using `@upstash/ratelimit`. When making a request to the Lambda, the rate limiter should decide if the request should go through or not.
 
 ### What is the issue?
 
