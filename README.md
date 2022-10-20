@@ -6,7 +6,7 @@ Reproducing a timeout issue with upstash in AWS Lambda.
 
 ### What is it all about?
 
-This Repo contains a AWS CDK that defines a HttpGateway and a Lambda `src/rateLimiter/index.ts`. The lambda uses a rate limiter using `@upstash/ratelimit`. When making a request to the Lambda, the rate limiter should decide if the request should go through or not.
+This Repo contains a AWS CDK that defines a HttpGateway and a Lambda `src/rateLimiter/index.ts`. The lambda uses a rate limiter (`utils/rateLimiter.util.ts`) using `@upstash/ratelimit`. When making a request to the Lambda, the rate limiter should decide if the request should go through or not.
 
 ### What is the issue?
 
@@ -20,7 +20,7 @@ No response from invoke container for ratelimitC4266C65
 Invalid lambda response received: Lambda response must be valid json
 ```
 
-However, this only happens, if called inside the Lambda. If called in Node (see `npm run rateLimiterDirect` as example), it works without issues.
+However, this only happens, if called inside the Lambda. If called in Node (see `npm run rateLimiterDirect` / `utils/runRatelimiterDirectly.ts` as example), it works without issues.
 
 ### Reproduce locally
 
